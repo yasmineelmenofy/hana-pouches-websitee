@@ -2,12 +2,13 @@ import { Instagram as IgIcon, ArrowUpRight } from 'lucide-react';
 import { CONTACT } from '@/data/site';
 
 const galleryImages = [
-  'https://images.pexels.com/photos/21283036/pexels-photo-21283036.jpeg?auto=compress&cs=tinysrgb&h=400&w=400',
-  'https://images.pexels.com/photos/7897135/pexels-photo-7897135.jpeg?auto=compress&cs=tinysrgb&h=400&w=400',
-  'https://images.pexels.com/photos/4856502/pexels-photo-4856502.jpeg?auto=compress&cs=tinysrgb&h=400&w=400',
-  'https://images.pexels.com/photos/3850531/pexels-photo-3850531.jpeg?auto=compress&cs=tinysrgb&h=400&w=400',
-  'https://images.pexels.com/photos/36393002/pexels-photo-36393002.jpeg?auto=compress&cs=tinysrgb&h=400&w=400',
-  'https://images.pexels.com/photos/6044145/pexels-photo-6044145.jpeg?auto=compress&cs=tinysrgb&h=400&w=400',
+  "public/products/littlemore/1.jpeg",
+  "public/products/littlemore/2.jpeg",
+  "public/products/littlemore/3.jpeg",
+  "public/products/littlemore/4.jpeg",
+  "public/products/littlemore/6.jpeg",
+  "public/products/littlemore/7.jpeg",
+
 ];
 
 export default function InstagramSection() {
@@ -18,13 +19,14 @@ export default function InstagramSection() {
           <span className="text-xs uppercase tracking-widest text-blush-400 font-medium">
             Follow along
           </span>
+
           <h2 className="mt-3 font-display text-4xl md:text-5xl text-ink-900">
-            Join us on Instagram
+            A little more Hana
           </h2>
+
           <p className="mt-4 text-ink-700/70 leading-relaxed">
-            See new pieces, behind-the-scenes making and customer love over on{' '}
-            {CONTACT.instagramHandle}. These placeholder images can be swapped
-            for real product photos.
+            Follow {CONTACT.instagramHandle} for new pieces, handmade details,
+            styling inspiration and more.
           </p>
         </div>
 
@@ -39,10 +41,11 @@ export default function InstagramSection() {
             >
               <img
                 src={src}
-                alt="Instagram post"
+                alt={`Hana Pouches Instagram ${i + 1}`}
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
+
               <div className="absolute inset-0 bg-ink-900/0 group-hover:bg-ink-900/40 transition-colors flex items-center justify-center">
                 <ArrowUpRight className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>

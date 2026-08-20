@@ -1,14 +1,16 @@
-import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ShoppingBag } from 'lucide-react';
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Instagram } from "lucide-react";
+import { CONTACT } from "@/data/site";
 
 const navLinks = [
-  { label: 'Home', to: '/' },
-  { label: 'Pouches', to: '/#pouches' },
-  { label: 'Scrunchies', to: '/#scrunchies' },
-  { label: 'About', to: '/#about' },
-  { label: 'Reviews', to: '/#reviews' },
-  { label: 'Contact', to: '/#contact' },
+  { label: "Home", to: "/" },
+  { label: "Pouches", to: "/#pouches" },
+  { label: "Scrunchies", to: "/#scrunchies" },
+  { label: "Bags", to: "/#bags" },
+  { label: "About", to: "/#about" },
+  { label: "Reviews", to: "/#reviews" },
+  { label: "Contact", to: "/#contact" },
 ];
 
 export default function Header() {
@@ -19,8 +21,8 @@ export default function Header() {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   useEffect(() => {
@@ -29,11 +31,11 @@ export default function Header() {
 
   const handleNavClick = (to: string) => {
     setOpen(false);
-    if (to.startsWith('/#')) {
+    if (to.startsWith("/#")) {
       const id = to.slice(2);
       const el = document.getElementById(id);
       if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
   };
@@ -42,15 +44,15 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-cream-50/90 backdrop-blur-md shadow-soft'
-          : 'bg-transparent'
+          ? "bg-cream-50/90 backdrop-blur-md shadow-soft"
+          : "bg-transparent"
       }`}
     >
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <div className="flex h-16 md:h-20 items-center justify-between">
           <Link to="/" className="group">
-            <span className="font-display text-2xl md:text-3xl tracking-wide text-ink-900 leading-none">
-              Hana <span className="text-blush-500 italic">Pouches</span>
+            <span className="font-display text-3xl md:text-4xl tracking-tight text-ink-900 leading-none">
+              Hana <span className="italic text-blush-500">Pouches</span>
             </span>
           </Link>
 
@@ -60,7 +62,7 @@ export default function Header() {
                 key={link.label}
                 href={link.to}
                 onClick={(e) => {
-                  if (link.to.startsWith('/#')) {
+                  if (link.to.startsWith("/#")) {
                     e.preventDefault();
                     handleNavClick(link.to);
                   }
@@ -74,12 +76,12 @@ export default function Header() {
 
           <div className="flex items-center gap-3">
             <a
-              href="https://wa.me/[add-number]"
+              href={CONTACT.instagramUrl}
               target="_blank"
               rel="noreferrer"
               className="hidden md:inline-flex items-center gap-2 rounded-full bg-blush-400 hover:bg-blush-500 text-white text-sm font-medium px-5 py-2.5 transition-colors shadow-soft"
             >
-              <ShoppingBag className="w-4 h-4" />
+              <Instagram className="w-4 h-4" />
               Order Now
             </a>
             <button
@@ -102,7 +104,7 @@ export default function Header() {
                 key={link.label}
                 href={link.to}
                 onClick={(e) => {
-                  if (link.to.startsWith('/#')) {
+                  if (link.to.startsWith("/#")) {
                     e.preventDefault();
                     handleNavClick(link.to);
                   }
@@ -113,12 +115,12 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="https://wa.me/[add-number]"
+              href={CONTACT.instagramUrl}
               target="_blank"
               rel="noreferrer"
-              className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-blush-400 text-white font-medium px-5 py-3"
+              className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-blush-400 hover:bg-blush-500 text-white font-medium px-5 py-3 shadow-soft"
             >
-              <ShoppingBag className="w-4 h-4" />
+              <Instagram className="w-4 h-4" />
               Order Now
             </a>
           </nav>

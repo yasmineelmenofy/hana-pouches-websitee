@@ -9,15 +9,16 @@ export default function Scrunchies() {
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <span className="text-xs uppercase tracking-widest text-blush-400 font-medium">
-            Soft & playful
+            Soft details
           </span>
+
           <h2 className="mt-3 font-display text-4xl md:text-5xl text-ink-900">
-            Scrunchies
+            Scrunchies made to love
           </h2>
+
           <p className="mt-4 text-ink-700/70 leading-relaxed">
-            Silky, soft and gentle on your hair. Our scrunchies come in a range
-            of colours and fabrics — from dusty rose to lavender — each one
-            gathered and stitched by hand for a full, romantic shape.
+            Soft, comfortable and easy to style — our handmade scrunchies add
+            a simple touch of colour and charm to your everyday look.
           </p>
         </div>
 
@@ -32,13 +33,15 @@ export default function Scrunchies() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-center md:text-left">
               <h3 className="font-display text-2xl md:text-3xl text-ink-900">
-                A colour for every mood
+                Find your favourite shade
               </h3>
+
               <p className="mt-2 text-sm text-ink-700/70 max-w-sm">
-                From soft pastels to deeper tones — find the scrunchie that
-                matches your style.
+                From soft pastels to deeper tones — choose the shade that feels
+                most like you.
               </p>
             </div>
+
             <div className="flex flex-wrap justify-center gap-3">
               {[
                 { name: 'Dusty rose', color: 'bg-blush-300' },
@@ -49,7 +52,9 @@ export default function Scrunchies() {
                 { name: 'Ivory', color: 'bg-cream-100' },
               ].map((c) => (
                 <div key={c.name} className="flex flex-col items-center gap-2">
-                  <div className={`w-14 h-14 rounded-full ${c.color} shadow-soft`} />
+                  <div
+                    className={`w-14 h-14 rounded-full ${c.color} shadow-soft`}
+                  />
                   <span className="text-xs text-ink-700/70">{c.name}</span>
                 </div>
               ))}
